@@ -1,0 +1,49 @@
+---
+title: "PAGLINAWAN, ZEUS A.-FA4"
+author: "Zeus Paglinawan"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ITEM 7
+
+### (a) Overall probability of an error
+
+```{r}
+P_Jane <- 0.10
+P_Amy <- 0.30
+P_Ava <- 0.60
+
+P_E_given_Jane <- 0.08
+P_E_given_Amy <- 0.05
+P_E_given_Ava <- 0.01
+
+P_E <- (P_E_given_Jane * P_Jane) +
+       (P_E_given_Amy * P_Amy) +
+       (P_E_given_Ava * P_Ava)
+
+P_E
+```
+
+The overall percentage of error is **2.9%**.
+
+### (b) Most likely person
+
+```{r}
+P_Jane_given_E <- (P_E_given_Jane * P_Jane) / P_E
+P_Amy_given_E <- (P_E_given_Amy * P_Amy) / P_E
+P_Ava_given_E <- (P_E_given_Ava * P_Ava) / P_E
+
+P_Jane_given_E
+P_Amy_given_E
+P_Ava_given_E
+```
+
+Amy is the most likely person to have written the program, with a probability of **51.72%**.
